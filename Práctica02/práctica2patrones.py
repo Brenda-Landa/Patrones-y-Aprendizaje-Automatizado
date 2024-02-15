@@ -83,6 +83,8 @@ print(model.summary())
 model.compile(loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(x_train, y_train_binary, epochs=4, batch_size=2000, validation_split=0.01)
 
+"""Hiperparámetros optimizadores"""
+
 model = Sequential([
     Flatten(input_shape=(28, 28)),
     Dense(1)
