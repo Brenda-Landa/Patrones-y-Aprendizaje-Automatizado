@@ -63,6 +63,30 @@ print(model.summary())
 model.compile(loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(x_train, y_train_binary, epochs=20, batch_size=2000, validation_split=0.9)
 
+from sklearn.metrics import confusion_matrix, \
+precision_score, recall_score,f1_score
+
+y_pred = (model.predict(x_test) >= 0.5).astype(int)[:,0]
+
+conf_matrix = confusion_matrix(y_test_binary, y_pred)
+print("Matriz de confusión:")
+print(conf_matrix)
+
+precision = precision_score(y_test_binary, y_pred)
+print("Precision_1:", precision)
+recall = recall_score(y_test_binary, y_pred)
+print("Recall_1:", recall)
+f1_s = f1_score(y_test_binary, y_pred)
+print("F1-score_1:", f1_s)
+
+
+precision_0 = precision_score(y_test_binary, y_pred, pos_label=0)
+print("Precision_0:", precision_0)
+recall_0 = recall_score(y_test_binary, y_pred, pos_label=0)
+print("Recall_0:", recall_0)
+f1_s_0 = f1_score(y_test_binary, y_pred, pos_label=0)
+print("F1-score_0:", f1_s_0)
+
 model = Sequential([
     Flatten(input_shape=(28, 28)),
     Dense(1)
@@ -73,6 +97,30 @@ print(model.summary())
 model.compile(loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(x_train, y_train_binary, epochs=4, batch_size=2, validation_split=0.9)
 
+from sklearn.metrics import confusion_matrix, \
+precision_score, recall_score,f1_score
+
+y_pred = (model.predict(x_test) >= 0.5).astype(int)[:,0]
+
+conf_matrix = confusion_matrix(y_test_binary, y_pred)
+print("Matriz de confusión:")
+print(conf_matrix)
+
+precision = precision_score(y_test_binary, y_pred)
+print("Precision_1:", precision)
+recall = recall_score(y_test_binary, y_pred)
+print("Recall_1:", recall)
+f1_s = f1_score(y_test_binary, y_pred)
+print("F1-score_1:", f1_s)
+
+
+precision_0 = precision_score(y_test_binary, y_pred, pos_label=0)
+print("Precision_0:", precision_0)
+recall_0 = recall_score(y_test_binary, y_pred, pos_label=0)
+print("Recall_0:", recall_0)
+f1_s_0 = f1_score(y_test_binary, y_pred, pos_label=0)
+print("F1-score_0:", f1_s_0)
+
 model = Sequential([
     Flatten(input_shape=(28, 28)),
     Dense(1)
@@ -82,6 +130,30 @@ print(model.summary())
 
 model.compile(loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(x_train, y_train_binary, epochs=4, batch_size=2000, validation_split=0.01)
+
+from sklearn.metrics import confusion_matrix, \
+precision_score, recall_score,f1_score
+
+y_pred = (model.predict(x_test) >= 0.5).astype(int)[:,0]
+
+conf_matrix = confusion_matrix(y_test_binary, y_pred)
+print("Matriz de confusión:")
+print(conf_matrix)
+
+precision = precision_score(y_test_binary, y_pred)
+print("Precision_1:", precision)
+recall = recall_score(y_test_binary, y_pred)
+print("Recall_1:", recall)
+f1_s = f1_score(y_test_binary, y_pred)
+print("F1-score_1:", f1_s)
+
+
+precision_0 = precision_score(y_test_binary, y_pred, pos_label=0)
+print("Precision_0:", precision_0)
+recall_0 = recall_score(y_test_binary, y_pred, pos_label=0)
+print("Recall_0:", recall_0)
+f1_s_0 = f1_score(y_test_binary, y_pred, pos_label=0)
+print("F1-score_0:", f1_s_0)
 
 """Hiperparámetros optimizadores"""
 
